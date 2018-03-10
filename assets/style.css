@@ -1,0 +1,35 @@
+body {
+    background-image: url("images/brickwall_@2X.png");
+    margin: 0px;
+}
+
+header {
+    text-align: center;
+    font-family: 'Bungee Shade', cursive, sans-serif;
+    font-size: 35pt;
+    margin: 0px;
+    background: rgba(173, 216, 230, 0.3);
+}
+
+.container{
+    width: 900px;
+    margin: 0 auto;
+}
+
+.buttonSection {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.gif_ImageSection {
+    border: 2px solid black;
+    padding: 50px;
+    margin: 0 auto;
+}
+
+.button {
+    padding: 10px;
+    font-size: 16px;
+    background: rgba(173, 216, 230, 0.3);
+    border-radius: 15px;
+}
