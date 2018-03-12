@@ -16,19 +16,20 @@ header {
     margin: 0 auto;
 }
 
-.buttonSection {
+#buttonSection {
     margin-top: 25px;
     margin-bottom: 25px;
 }
 
-.gif_ImageSection {
+#gif_ImageSection {
     border: 2px solid black;
     padding: 50px;
     margin: 0 auto;
 }
 
-.button {
+.topicButton {
     padding: 10px;
+    margin: 15px;
     font-size: 16px;
     background: rgba(173, 216, 230, 0.3);
     border-radius: 15px;
