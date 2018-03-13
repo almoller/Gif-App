@@ -1,5 +1,4 @@
 
-
 var topics = ["snow", "rain", "Oh Brother", "LOL", "disney"];
 
 function renderButtons() {
@@ -11,11 +10,11 @@ function renderButtons() {
         a.attr("data-name", topics[i]);
         a.text(topics[i]);
         $("#buttonSection").append(a);
-    }
-}
+    };
+};
 
 function displayTopicGif() {
-    $("#starterImg").hide();
+    $("#gif_ImageSection").empty();
 
     var topic = $(this).attr("data-name");
     var key = "7wHvqslBWYbnRRNpNRV73m1WyvYdKXRo";
@@ -29,21 +28,61 @@ function displayTopicGif() {
         console.log(response);
 
         for (var j = 0; j < response.data.length; j++) {
-            var gifDiv = $("<div class='gif'>");
+            var gifDivStill = $("<div class='gif' data-state='still'>");
+            // var gifDivAnimate = $("<div class='gif' data-state='animate'>");
 
             var rated = response.data[j].rating;   
-            var $rated = $("<p>").text("Rating: " + rated);   
+            var $rated = $("<p>").text("Rating: " + rated);                     
             
-            var imgUrl = response.data[j].images.fixed_width_still.url;
-            var $img = $("<img>").attr("src", imgUrl);
+            var imgUrlStill = response.data[j].images.fixed_width_still.url;
+            var $imgStill = $("<img>").attr("src", imgUrlStill);
 
-            gifDiv.append('<hr>', $rated, $img);
+            // var imgUrlAnimate = response.data[j].images.fixed_width.url;
+            // var $imgAnimate = $("<img>").attr("src", imgUrlAnimate);
 
-            $("#gif_ImageSection").append(gifDiv);
+
+            gifDivStill.append('<hr>', $rated, $imgStill);
+            // gifDivAnimate.append('<hr>', $rated, $imgAnimate);
+
+            $("#gif_ImageSection").append(gifDivStill);
+            // $("#gif_ImageSection").append(gifDivAnimate);
         };
+
+        $(document).on("click", ".gif", function() {
+            console.log("click registered");
+
+            var state = $(this).attr("data-state");
+        
+            if (state === "still") {
+                // imgUrl = response.data[j].images.fixed_width.url;
+                // $img = $("<img>").attr("src", imgUrlAnimate);
+                // gifDiv.append('<hr>', $rated, $img);
+                // $(this).html(gifDiv);
+                // $("#gif_AnimateSection").show(this);
+                
+                $(this).attr("data-state", "animate"); console.log(state);
+            } else {
+                $(this).attr("data-state", "still"); console.log(state);
+            }
+        });
 
     });
 };
+
+// function gifState() {  
+
+// };
+
+$("#add-topic").on("click", function(event) {
+    event.preventDefault();
+
+    var topic = $("#topic-input").val().trim();
+    topics.push(topic);
+
+    $("input[type=text]").val("");
+    renderButtons();
+})
+
 
 $(document).on("click", ".topicButton", displayTopicGif);
 

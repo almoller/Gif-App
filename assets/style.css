@@ -1,19 +1,37 @@
 body {
     background-image: url("images/brickwall_@2X.png");
-    margin: 0px;
-    width: 100%;
+    margin: 0 auto;;
+    width: 900px;
 }
 
 header {
+
     text-align: center;
-    margin: 0px;
-    width: 100%;
+    margin: 0 auto;
+    width: 700px;
     background: rgba(173, 216, 230, 0.3);
 }
 
 h1 {
     font-family: 'Bungee Shade', cursive, sans-serif;
     font-size: 55pt;
+    padding: 50px 0;
+    width: 700px;
+}
+
+form {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#add-topic {
+    padding: 5px;
+    margin: 15px 15px 25px 15px;
+    background: rgb(252, 242, 189);
+    border-radius: 10px;
+}
+
+#add-topic:hover {
+    background: rgb(173, 216, 230);
 }
 
 .container{
@@ -25,14 +43,16 @@ h1 {
 #buttonSection {
     margin-top: 25px;
     margin-bottom: 25px;
+    padding: 0 60px;
 }
 
 .gifSection {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding: 50px;
     margin: 0 auto;
     margin-bottom: 50px;
     float: left;
+    height: 100%;
 }
 
 .topicButton {
@@ -47,5 +67,26 @@ h1 {
     float: left;
     margin: 10px 37px 75px 25px;
     height: 200px;
+}
+
+.gif p {
+    margin: 10px 0;
+}
+
+.topicButton:hover {
+    background: rgb(173, 216, 230);
+}
+
+
+/* MEDIA QUERIE */
+
+@media screen and (max-width: 700px) {
+
+    body,
+    header,
+    h1,
+    .container {
+        width: 100%;
+    }
 
 }

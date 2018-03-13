@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>  
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,6 +9,7 @@
     <title>Gif App</title>
 
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/style.css">
 
 </head>
@@ -16,22 +17,28 @@
 <body>
 
     <header class="header">
+
         <h1>GIF App</h1>
+
+        <form id="topic-form">
+            <label for="topic-input">Add a Topic:</label>
+            <input type="text" id="topic-input">
+            <input id="add-topic" type="submit" value="Submit Topic">
+        </form>
+
     </header>
+    
 
     <div class="container">
 
-        <div id="buttonSection">
-            <!-- <button class="button" value="example">Example Button</button> -->
-        </div>
+        <div id="buttonSection"></div>
+
         <div class="gifSection">
-        <div id="gif_ImageSection">
-            <img id="starterImg" src="assets/images/q9_sugarloaf.jpg">
-        </div>
+            <div id="gif_ImageSection"></div>
         </div>
 
     </div>
-    
+
 </body>
 
 <script src="https://code.jquery.com/jquery.js"></script>
