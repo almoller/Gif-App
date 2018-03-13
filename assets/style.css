@@ -1,19 +1,25 @@
 body {
     background-image: url("images/brickwall_@2X.png");
     margin: 0px;
+    width: 100%;
 }
 
 header {
     text-align: center;
-    font-family: 'Bungee Shade', cursive, sans-serif;
-    font-size: 35pt;
     margin: 0px;
+    width: 100%;
     background: rgba(173, 216, 230, 0.3);
+}
+
+h1 {
+    font-family: 'Bungee Shade', cursive, sans-serif;
+    font-size: 55pt;
 }
 
 .container{
     width: 900px;
     margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #buttonSection {
@@ -21,10 +27,12 @@ header {
     margin-bottom: 25px;
 }
 
-#gif_ImageSection {
+.gifSection {
     border: 2px solid black;
     padding: 50px;
     margin: 0 auto;
+    margin-bottom: 50px;
+    float: left;
 }
 
 .topicButton {
@@ -33,4 +41,11 @@ header {
     font-size: 16px;
     background: rgba(173, 216, 230, 0.3);
     border-radius: 15px;
+}
+
+.gif {
+    float: left;
+    margin: 10px 37px 75px 25px;
+    height: 200px;
+
 }
