@@ -40,6 +40,11 @@ form {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.container p {
+    text-align: center;
+    margin-top: 36px;
+}
+
 #buttonSection {
     margin-top: 25px;
     margin-bottom: 25px;

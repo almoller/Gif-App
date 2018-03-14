@@ -31,11 +31,10 @@ function displayTopicGif() {
 
         for (var j = 0; j < response.data.length; j++) {
             var gifDiv = $("<div class='gif'>");
-            // var gifDivAnimate = $("<div class='gif>");
 
-            var rated = response.data[j].rating;   
-            var $rated = $("<p>").text("Rating: " + rated);                     
-            
+            var rated = response.data[j].rating;
+            var $rated = $("<p>").text("Rating: " + rated);
+
             var imgUrlStill = response.data[j].images.fixed_width_still.url;
             var $imgStill = $("<img>").attr("src", imgUrlStill);
 
@@ -46,41 +45,32 @@ function displayTopicGif() {
             gifDiv.attr("data-state-still", imgUrlStill);
             gifDiv.attr("data-state-animate", imgUrlAnimate);
             gifDiv.append('<hr>', $rated, $imgStill);
-            // gifDivAnimate.append('<hr>', $rated, $imgAnimate);
 
             $("#gif_ImageSection").append(gifDiv);
-            // $("#gif_ImageSection").append(gifDivAnimate);
-            
         };
-
-        // Make gifs clickable and change it to animated version when clicked
-        $(document).on("click", ".gif", function() {
-            // debugger;
-            console.log("click registered");
-
-            var state = $(this).attr("data-state");
-            var animate = $(this).attr("data-state-animate");
-            var still = $(this).attr("data-state-still");
-        
-            if (state === "still") {
-                // $(this).html(gifDivAnimate);
-                $(this).find("img").attr("src", animate);
-                $(this).attr("data-state", "animate"); console.log(state);
-            } else {
-                // $(this).html(gifDivStill);
-                $(this).find("img").attr("src", still);
-                $(this).attr("data-state", "still"); console.log(state);
-            }
-        });
-
     });
 };
 
-// function gifState() {  
-// };
+// function to change the gif url between the animated and still versions
+function gifState() {
+    var state = $(this).attr("data-state");
+    var animate = $(this).attr("data-state-animate");
+    var still = $(this).attr("data-state-still");
+
+    if (state === "still") {
+        $(this).find("img").attr("src", animate);
+        $(this).attr("data-state", "animate");
+    } else {
+        $(this).find("img").attr("src", still);
+        $(this).attr("data-state", "still");
+    };
+};
+
+// Make gifs clickable and change it to animated version when clicked
+$(document).on("click", ".gif", gifState)
 
 // make "submit topic" button functional
-$("#add-topic").on("click", function(event) {
+$("#add-topic").on("click", function (event) {
     event.preventDefault();
 
     var topic = $("#topic-input").val().trim();
